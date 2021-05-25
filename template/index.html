@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css"  href="{% static 'css/styles.css' %}">
+  
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Sentiment Analysis App using NLP and LSTM
+		</div>
+		<h2>Sentiment Analysis for Movie Reviews</h2>
+		
+	</div>
+	</header>
+	
+	<div class="ml-container">
+		<a class="nav-link" style="padding-left: 50px;padding-top: 10px;" href="/">Home</a>
+		<form action="{% url 'result' %}" >
+			{% csrf_token %}
+		<p>Enter a review here which you want to analyse </p>
+		<br>
+		{% block content %}
+	{% endblock %}
+	<br>
+		<textarea name="message" rows="6" cols="50"></textarea>
+		<br/>
+
+		<input type="Submit" class="btn-info" value="Predict">
+		
+	</form>
+		
+	</div>
+</body>
+</html>

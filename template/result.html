@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+	<div class="results">
+			
+	{% if result == "negative"%}
+	<h2 style="color:red;">Negative</h2>
+	{% elif result == "positive"%}
+	<h2 style="color:blue;">Positive</h2>
+	{% endif %}
+
+	</div>
+
+{% endblock %}
